@@ -1,0 +1,7 @@
+\contentsline {section}{\numberline {1}Intro}{1}{section.1}%
+\contentsline {section}{\numberline {2}Surface plasmon polaritons (SPP).}{1}{section.2}%
+\contentsline {section}{\numberline {3}Long-range surface plasmon polaritons}{4}{section.3}%
+\contentsline {section}{\numberline {4}Surface plasmon polaritons (SPP) in 2D.}{6}{section.4}%
+\contentsline {section}{\numberline {5}Papers dealing with spatial dependence for 3D semi-infinite dependence.}{7}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Sum rules semi-infinite electron gas}{7}{subsection.5.1}%
+\contentsline {section}{\numberline {6}Possible problems we could work on}{7}{section.6}%

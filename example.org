@@ -1,0 +1,231 @@
+#+TITLE: Probing strongly coupled liquids with plasmonics
+#+STARTUP: inlineimages
+
+* Intro
+
+You can find a very simple presentation in these [[./plasmonics-lecture-notes.pdf][lecture notes]]. These
+kind of effects have been known since the 1960s and have been studied
+both theoretically and experimentally.
+
+
+Nowadays, have become even more relevant due to easier access to
+experimental techniques. An important advantage they have is due their
+sensitivity.
+
+
+* Surface plasmon polaritons (SPP).
+  
+This is the simplest case of a perfect interface between two different
+materials, e.g. air and metal, and solve Maxwell's
+equations:
+
+
+#+DOWNLOADED: screenshot @ 2023-08-22 15:07:26
+[[file:./Surface_plasmon_polaritons_(SPP)/2023-08-22_15-07-26_screenshot.png]]
+
+with
+
+#+DOWNLOADED: screenshot @ 2023-08-22 15:11:15
+[[file:./Surface_plasmon_polaritons_(SPP)/2023-08-22_15-11-15_screenshot.png]]
+
+Here one is making implicitly the assumption that $\epsilon = \epsilon ( \omega)$, otherwise
+you would need to account or terms like
+
+
+#+DOWNLOADED: screenshot @ 2023-08-22 15:20:39
+[[file:./Surface_plasmon_polaritons_(SPP)/2023-08-22_15-20-39_screenshot.png]]
+
+as discussed by [[./Maier_PLASMONICS.pdf][Maier]], after Eq. (2.1)
+
+
+#+DOWNLOADED: screenshot @ 2023-08-21 19:49:35
+[[file:./Surface_plasmon_polaritons_(SPP)/2023-08-21_19-49-35_screenshot.png]]
+
+
+Here the crucial point is that, the dielectric function at a given
+frequency has to be negative, leading a mode solution for the TM
+(transverse magnetic) polarization that has an evanescent profile
+along the axis perpendicular to the plane z, whereas it can still
+propagate along the plane.
+
+You start with following plane wave ansatz for each material:
+
+
+#+DOWNLOADED: screenshot @ 2023-08-22 15:33:50
+[[file:./Surface_plasmon_polaritons_(SPP)/2023-08-22_15-33-50_screenshot.png]]
+
+
+to solve Maxwell's eqs. and the following continuity relation at the
+air-metal interface
+
+#+DOWNLOADED: screenshot @ 2023-08-22 15:38:37
+[[file:./Surface_plasmon_polaritons_(SPP)/2023-08-22_15-38-37_screenshot.png]]
+
+
+
+This will have the relation:
+
+
+#+DOWNLOADED: screenshot @ 2023-08-22 15:40:20
+[[file:./Surface_plasmon_polaritons_(SPP)/2023-08-22_15-40-20_screenshot.png]]
+
+These are indeed imaginary both. The other one left (we took $k_y=0$
+for simplicity) is the x-component $k_x$ which is, obviously, the both
+materials.
+
+
+#+DOWNLOADED: screenshot @ 2023-08-22 15:45:12
+[[file:./Surface_plasmon_polaritons_(SPP)/2023-08-22_15-45-12_screenshot.png]]
+
+
+
+And so the dispersion relation of the mode is given by:
+
+
+
+\begin{equation}
+k_x^2 = \frac{\omega^2}{c^2 }  \frac{\epsilon_1 \epsilon_2}  {\epsilon_1+ \epsilon_2}
+\end{equation}
+
+
+
+An argument of why only TM are of interest is given in [[./Maier_PLASMONICS.pdf][Maier]]:
+#+DOWNLOADED: screenshot @ 2023-08-21 20:03:10
+[[file:./Surface_plasmon_polaritons_(SPP)/2023-08-21_20-03-10_screenshot.png]]
+
+
+
+
+This is applicable for infinite surface case, at least. One might need
+to review this also when dealing with a non-local dielectric function.
+
+
+This is almost always solved using a Drude-like plasmon to the get:
+
+
+#+DOWNLOADED: screenshot @ 2023-08-22 16:25:56
+[[file:./Surface_plasmon_polaritons_(SPP)/2023-08-22_16-25-56_screenshot.png]]
+
+
+
+The dielectric line with respect to air or vacuum is important
+because SPP don't couple to any modes outside. The only way to excite
+them is through a prism of dielectric material whose dielectric
+constant is bigger than the air's one, working under total internal
+reflection. 
+
+
+
+
+* Long-range surface plasmon polaritons
+
+
+  If, instead semi-infinite metal, you take a thin metal slab,
+  sandwich between semi-infinite dielectrics:
+
+
+#+DOWNLOADED: screenshot @ 2023-08-25 20:54:57
+[[file:Long-range_surface_plasmon_polaritons/2023-08-25_20-54-57_screenshot.png]]
+
+
+then you get two solutions that are both valid plasmon polaritons, with
+the following dispersion (see [[./Plasmonics-book.pdf][Plasmonics book]]):
+
+
+
+#+DOWNLOADED: screenshot @ 2023-08-25 21:22:38
+[[file:Long-range_surface_plasmon_polaritons/2023-08-25_21-22-38_screenshot.png]]
+
+
+
+
+
+
+For a plasmon like dielectric function you get:
+
+
+#+DOWNLOADED: screenshot @ 2023-08-25 21:27:24
+[[file:Long-range_surface_plasmon_polaritons/2023-08-25_21-27-24_screenshot.png]]
+
+where the upper-mode is known as the long-range spp.
+
+
+
+* Surface plasmon polaritons (SPP) in 2D.
+
+
+Surface plasmon polaritons also show up when considers thin metallic
+strips. In a [[./s41467-020-14826-8.pdf][recent paper]] on quasi-2D-metals, you can see the effect
+that has over the shape of the plasmon-polariton dependence on the
+wave-vector:
+
+
+#+DOWNLOADED: screenshot @ 2023-08-28 10:34:02
+[[file:./Surface_plasmon_polaritons_(SPP)_in_2D/2023-08-28_10-34-02_screenshot.png]]
+
+Here, panel (a) corresponds to the semi-infinite metal, showing how
+the dispersion beds from a flat plasmon to the SPP. Panel (b) same but
+a finite-length metallic strip of 100 Angstrom thick, showing both
+plasmonic modes. Panel (c) corresponds to a quasi 2D metallic strip,
+whose thickness is about 5 Angstrom.
+
+In the latter case, the monolayer shows the standard 2D dispersion
+
+#+DOWNLOADED: screenshot @ 2023-08-28 17:43:03
+[[file:./Surface_plasmon_polaritons_(SPP)_in_2D/2023-08-28_17-43-03_screenshot.png]]
+
+
+
+Other papers for this 2D case:
+  
+- [[./1705.07423.pdf][Observation of surface plasmon polaritons in 2D electron gas]]
+
+- [[./s41377-022-01012-2.pdf][Two-dimensional Dirac plasmon-polaritons in graphene, 3D topologicalinsulator and hybrid systems]]
+
+
+- [[./nanomaterials-13-00975.pdf][Two-Dimensional Plasmons in Laterally Confined 2D Electron Systems]]
+  
+
+
+
+
+* Papers dealing with spatial dependence for 3D semi-infinite dependence.
+
+  
+- [[https://journals.aps.org/prb/abstract/10.1103/PhysRevB.3.2270][Surface Plasmon in a Semi-Infinite Free-Electron Gas]]
+
+- [[./0611257.pdf][Theory of surface plasmons and surface-plasmon polariton]]s
+  This is more a review than anything but treats the problem self-consistently
+
+- [[./0209335.pdf][Self-consistent solution of the Kohn-Sham equations for systems with inhomogeneous electron gas]] 
+
+- [[./Tokatly__2014_1015.pdf][Current-induced spin polarization at the surface of metallic films: a theorem and anab initio calculation]]
+
+- [[./12-PRB-20-3186-79.pdf][Conductivity of a semi-infinite electron gas: Effective "optical" surface region]]
+
+- [[./1511.08708.pdf][Semi-infinite jellium: Step potential model]]
+   
+  
+** Sum rules semi-infinite electron gas
+
+   - [[./169.pdf][The Surface Dielectric Function and Its Sum Rule Semi-Infinite Electrou System]]
+     
+   - [[./1511.08708.pdf][Semi-infinite jellium: Step potential model]]
+
+
+
+   
+* Possible problems we could work on
+
+- The simplest case would be to deal the 3D case in the
+  short-wavelength approximation (k=0) for metal or semiconductor, where correlations among
+  multiple species are important. Remember that we need to have a relatively perfect interface for the
+  polariton to propagate.
+
+
+- Next would be a 2D case, where we can work out exactly all
+  moments for arbitrary wave-number. Especially, if one can probe the case of a bilayer where there is an optic
+  out-of-phase-mode using plasmon polaritons.
+
+- Last, work on the full 3D case finding how the moments change with a
+  semi-infinite metal. 

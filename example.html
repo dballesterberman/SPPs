@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-09-22 vi. 17:41 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Probing strongly coupled liquids with plasmonics</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Probing strongly coupled liquids with plasmonics</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org48ef2cf">1. Intro</a></li>
+<li><a href="#org38a85a2">2. Surface plasmon polaritons (SPP).</a></li>
+<li><a href="#org52c57dd">3. Long-range surface plasmon polaritons</a></li>
+<li><a href="#org1b812ee">4. Surface plasmon polaritons (SPP) in 2D.</a></li>
+<li><a href="#orgdc82bc6">5. Papers dealing with spatial dependence for 3D semi-infinite dependence.</a>
+<ul>
+<li><a href="#org394ed2f">5.1. Sum rules semi-infinite electron gas</a></li>
+</ul>
+</li>
+<li><a href="#orga856c74">6. Possible problems we could work on</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org48ef2cf" class="outline-2">
+<h2 id="org48ef2cf"><span class="section-number-2">1</span> Intro</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+You can find a very simple presentation in these <a href="./plasmonics-lecture-notes.pdf">lecture notes</a>. These
+kind of effects have been known since the 1960s and have been studied
+both theoretically and experimentally.
+</p>
+
+
+<p>
+Nowadays, have become even more relevant due to easier access to
+experimental techniques. An important advantage they have is due their
+sensitivity.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org38a85a2" class="outline-2">
+<h2 id="org38a85a2"><span class="section-number-2">2</span> Surface plasmon polaritons (SPP).</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+This is the simplest case of a perfect interface between two different
+materials, e.g. air and metal, and solve Maxwell's
+equations:
+</p>
+
+
+
+<div id="orgafe63e4" class="figure">
+<p><img src="./Surface_plasmon_polaritons_(SPP)/2023-08-22_15-07-26_screenshot.png" alt="2023-08-22_15-07-26_screenshot.png" />
+</p>
+</div>
+
+<p>
+with
+</p>
+
+
+<div id="org99ba779" class="figure">
+<p><img src="./Surface_plasmon_polaritons_(SPP)/2023-08-22_15-11-15_screenshot.png" alt="2023-08-22_15-11-15_screenshot.png" />
+</p>
+</div>
+
+<p>
+Here one is making implicitly the assumption that \(\epsilon = \epsilon ( \omega)\), otherwise
+you would need to account or terms like
+</p>
+
+
+
+<div id="orge6b3de6" class="figure">
+<p><img src="./Surface_plasmon_polaritons_(SPP)/2023-08-22_15-20-39_screenshot.png" alt="2023-08-22_15-20-39_screenshot.png" />
+</p>
+</div>
+
+<p>
+as discussed by <a href="./Maier_PLASMONICS.pdf">Maier</a>, after Eq. (2.1)
+</p>
+
+
+
+<div id="org4cee0fd" class="figure">
+<p><img src="./Surface_plasmon_polaritons_(SPP)/2023-08-21_19-49-35_screenshot.png" alt="2023-08-21_19-49-35_screenshot.png" />
+</p>
+</div>
+
+
+<p>
+Here the crucial point is that, the dielectric function at a given
+frequency has to be negative, leading a mode solution for the TM
+(transverse magnetic) polarization that has an evanescent profile
+along the axis perpendicular to the plane z, whereas it can still
+propagate along the plane.
+</p>
+
+<p>
+You start with following plane wave ansatz for each material:
+</p>
+
+
+
+<div id="org4892667" class="figure">
+<p><img src="./Surface_plasmon_polaritons_(SPP)/2023-08-22_15-33-50_screenshot.png" alt="2023-08-22_15-33-50_screenshot.png" />
+</p>
+</div>
+
+
+<p>
+to solve Maxwell's eqs. and the following continuity relation at the
+air-metal interface
+</p>
+
+
+<div id="org63e0b59" class="figure">
+<p><img src="./Surface_plasmon_polaritons_(SPP)/2023-08-22_15-38-37_screenshot.png" alt="2023-08-22_15-38-37_screenshot.png" />
+</p>
+</div>
+
+
+
+<p>
+This will have the relation:
+</p>
+
+
+
+<div id="org93077ea" class="figure">
+<p><img src="./Surface_plasmon_polaritons_(SPP)/2023-08-22_15-40-20_screenshot.png" alt="2023-08-22_15-40-20_screenshot.png" />
+</p>
+</div>
+
+<p>
+These are indeed imaginary both. The other one left (we took \(k_y=0\)
+for simplicity) is the x-component \(k_x\) which is, obviously, the both
+materials.
+</p>
+
+
+
+<div id="org74492af" class="figure">
+<p><img src="./Surface_plasmon_polaritons_(SPP)/2023-08-22_15-45-12_screenshot.png" alt="2023-08-22_15-45-12_screenshot.png" />
+</p>
+</div>
+
+
+
+<p>
+And so the dispersion relation of the mode is given by:
+</p>
+
+
+
+\begin{equation}
+k_x^2 = \frac{\omega^2}{c^2 }  \frac{\epsilon_1 \epsilon_2}  {\epsilon_1+ \epsilon_2}
+\end{equation}
+
+
+
+<p>
+An argument of why only TM are of interest is given in <a href="./Maier_PLASMONICS.pdf">Maier</a>:
+</p>
+
+<div id="org97752f8" class="figure">
+<p><img src="./Surface_plasmon_polaritons_(SPP)/2023-08-21_20-03-10_screenshot.png" alt="2023-08-21_20-03-10_screenshot.png" />
+</p>
+</div>
+
+
+
+
+<p>
+This is applicable for infinite surface case, at least. One might need
+to review this also when dealing with a non-local dielectric function.
+</p>
+
+
+<p>
+This is almost always solved using a Drude-like plasmon to the get:
+</p>
+
+
+
+<div id="org0e6544c" class="figure">
+<p><img src="./Surface_plasmon_polaritons_(SPP)/2023-08-22_16-25-56_screenshot.png" alt="2023-08-22_16-25-56_screenshot.png" />
+</p>
+</div>
+
+
+
+<p>
+The dielectric line with respect to air or vacuum is important
+because SPP don't couple to any modes outside. The only way to excite
+them is through a prism of dielectric material whose dielectric
+constant is bigger than the air's one, working under total internal
+reflection. 
+</p>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-org52c57dd" class="outline-2">
+<h2 id="org52c57dd"><span class="section-number-2">3</span> Long-range surface plasmon polaritons</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+If, instead semi-infinite metal, you take a thin metal slab,
+sandwich between semi-infinite dielectrics:
+</p>
+
+
+
+<div id="orgea8bbdf" class="figure">
+<p><img src="Long-range_surface_plasmon_polaritons/2023-08-25_20-54-57_screenshot.png" alt="2023-08-25_20-54-57_screenshot.png" />
+</p>
+</div>
+
+
+<p>
+then you get two solutions that are both valid plasmon polaritons, with
+the following dispersion (see <a href="./Plasmonics-book.pdf">Plasmonics book</a>):
+</p>
+
+
+
+
+<div id="org40a7609" class="figure">
+<p><img src="Long-range_surface_plasmon_polaritons/2023-08-25_21-22-38_screenshot.png" alt="2023-08-25_21-22-38_screenshot.png" />
+</p>
+</div>
+
+
+
+
+
+
+<p>
+For a plasmon like dielectric function you get:
+</p>
+
+
+
+<div id="org283a0c7" class="figure">
+<p><img src="Long-range_surface_plasmon_polaritons/2023-08-25_21-27-24_screenshot.png" alt="2023-08-25_21-27-24_screenshot.png" />
+</p>
+</div>
+
+<p>
+where the upper-mode is known as the long-range spp.
+</p>
+</div>
+</div>
+
+
+
+<div id="outline-container-org1b812ee" class="outline-2">
+<h2 id="org1b812ee"><span class="section-number-2">4</span> Surface plasmon polaritons (SPP) in 2D.</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Surface plasmon polaritons also show up when considers thin metallic
+strips. In a <a href="./s41467-020-14826-8.pdf">recent paper</a> on quasi-2D-metals, you can see the effect
+that has over the shape of the plasmon-polariton dependence on the
+wave-vector:
+</p>
+
+
+
+<div id="org15cebfc" class="figure">
+<p><img src="./Surface_plasmon_polaritons_(SPP)_in_2D/2023-08-28_10-34-02_screenshot.png" alt="2023-08-28_10-34-02_screenshot.png" />
+</p>
+</div>
+
+<p>
+Here, panel (a) corresponds to the semi-infinite metal, showing how
+the dispersion beds from a flat plasmon to the SPP. Panel (b) same but
+a finite-length metallic strip of 100 Angstrom thick, showing both
+plasmonic modes. Panel (c) corresponds to a quasi 2D metallic strip,
+whose thickness is about 5 Angstrom.
+</p>
+
+<p>
+In the latter case, the monolayer shows the standard 2D dispersion
+</p>
+
+
+<div id="orga0c3388" class="figure">
+<p><img src="./Surface_plasmon_polaritons_(SPP)_in_2D/2023-08-28_17-43-03_screenshot.png" alt="2023-08-28_17-43-03_screenshot.png" />
+</p>
+</div>
+
+
+
+<p>
+Other papers for this 2D case:
+</p>
+
+<ul class="org-ul">
+<li><a href="./1705.07423.pdf">Observation of surface plasmon polaritons in 2D electron gas</a></li>
+
+<li><a href="./s41377-022-01012-2.pdf">Two-dimensional Dirac plasmon-polaritons in graphene, 3D topologicalinsulator and hybrid systems</a></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="./nanomaterials-13-00975.pdf">Two-Dimensional Plasmons in Laterally Confined 2D Electron Systems</a></li>
+</ul>
+</div>
+</div>
+
+
+
+
+
+<div id="outline-container-orgdc82bc6" class="outline-2">
+<h2 id="orgdc82bc6"><span class="section-number-2">5</span> Papers dealing with spatial dependence for 3D semi-infinite dependence.</h2>
+<div class="outline-text-2" id="text-5">
+<ul class="org-ul">
+<li><a href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.3.2270">Surface Plasmon in a Semi-Infinite Free-Electron Gas</a></li>
+
+<li><a href="./0611257.pdf">Theory of surface plasmons and surface-plasmon polariton</a>s
+This is more a review than anything but treats the problem self-consistently</li>
+
+<li><a href="./0209335.pdf">Self-consistent solution of the Kohn-Sham equations for systems with inhomogeneous electron gas</a></li>
+
+<li><a href="./Tokatly__2014_1015.pdf">Current-induced spin polarization at the surface of metallic films: a theorem and anab initio calculation</a></li>
+
+<li><a href="./12-PRB-20-3186-79.pdf">Conductivity of a semi-infinite electron gas: Effective "optical" surface region</a></li>
+
+<li><a href="./1511.08708.pdf">Semi-infinite jellium: Step potential model</a></li>
+</ul>
+</div>
+
+
+<div id="outline-container-org394ed2f" class="outline-3">
+<h3 id="org394ed2f"><span class="section-number-3">5.1</span> Sum rules semi-infinite electron gas</h3>
+<div class="outline-text-3" id="text-5-1">
+<ul class="org-ul">
+<li><a href="./169.pdf">The Surface Dielectric Function and Its Sum Rule Semi-Infinite Electrou System</a></li>
+
+<li><a href="./1511.08708.pdf">Semi-infinite jellium: Step potential model</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-orga856c74" class="outline-2">
+<h2 id="orga856c74"><span class="section-number-2">6</span> Possible problems we could work on</h2>
+<div class="outline-text-2" id="text-6">
+<ul class="org-ul">
+<li>The simplest case would be to deal the 3D case in the
+short-wavelength approximation (k=0) for metal or semiconductor, where correlations among
+multiple species are important. Remember that we need to have a relatively perfect interface for the
+polariton to propagate.</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>Next would be a 2D case, where we can work out exactly all
+moments for arbitrary wave-number. Especially, if one can probe the case of a bilayer where there is an optic
+out-of-phase-mode using plasmon polaritons.</li>
+
+<li>Last, work on the full 3D case finding how the moments change with a
+semi-infinite metal.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2023-09-22 vi. 17:41</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

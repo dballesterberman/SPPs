@@ -1,0 +1,88 @@
+﻿.rich_html_content .figure td {
+    width: 100%;
+}
+
+table span.caption p {
+    display: inline;
+}
+
+.table-icon-td span p {
+    display: inline;
+}
+
+.article_meta_info .yybw {
+    width: 145px;
+}
+
+    .article_meta_info .yybw .to_down1 {
+        width: 140px;
+        background: url(/NV_LEGCY/html_resources/images/down.png) no-repeat 125px 7px;
+    }
+
+    .article_meta_info .yybw .to_up1 {
+        width: 140px;
+        background: url(/NV_LEGCY/html_resources/images/up.png) no-repeat 125px 7px;
+    }
+
+.key {
+    height: auto !important
+}
+
+table#topTable thead {
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+
+table#topTable tbody {
+    border-bottom: 1px solid #000;
+}
+
+table-wrap-foot {
+    text-align: left;
+    display: block;
+}
+
+    table-wrap-foot fn-group fn label {
+    }
+
+    table-wrap-foot fn-group fn p {
+        display: inline;
+        margin-left: 5px
+    }
+#topTable table {
+    width: 100%;
+}
+.article_body p {
+    text-indent: 2em;
+}
+disp-formula {
+    display: block;
+    position: relative;
+    padding:6px;
+    font-size:17px;
+    width:98%;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif,'微软雅黑';
+}
+
+div.MathJax_Display {
+}
+
+disp-formula > label {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    font-size: 14px;
+    margin-top: -13px;
+}
+/*endNote*/
+a.EndNote {
+    color: #6f6767
+}
+    a.EndNote:hover {
+        color: #ff8f41
+    }
+.float-win .float-content {
+    border: solid 2px #ff8f41 !important;
+    background: #fff !important;
+}

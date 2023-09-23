@@ -1,0 +1,343 @@
+﻿@charset "UTF-8";
+/* OPKG -- Next Version Main+Right Master Page Cascading Style Sheets */
+/*
+    ------------------------------------------------------------
+    Desc:Main+Right Columns layout master page css styles
+    Author:jokechen expert@siom.ac.cn
+    Time:2022-05-23 15:07:26
+    ------------------------------------------------------------
+*/
+.page {
+    /*margin-top: 106px;*/
+    background-color: #f2f2f2;
+    padding:38px 0;
+}
+    .page .container > .row {
+        margin:0px;
+        
+    }
+    /* ---------------- Main Panel --------------------*/
+    .page .main {
+        padding: 20px;
+        border-right: 2px solid #e5e5e5;
+        text-align:left;
+        background-color:#fff;
+    }
+    /* ---------------- Right Panel --------------------*/
+    .hotFocusPanel .item img {
+            display: none;
+        }
+    .page .right {
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 30px;
+        padding-bottom: 40px;
+        background-color: #fff;
+    }
+
+        .page .right .panel-nav {
+            padding: 20px 20px 20px 0px;
+            background: #f2f2f2;
+            margin-bottom: 20px;
+        }
+
+            .page .right .panel-nav a {
+                font-size: 1em;
+                display: block;
+                padding: 10px 10px 10px 33px;
+                color: #333;
+                border-left: 3px solid #f2f2f2;
+                margin-bottom: 2px;
+            }
+
+                .page .right .panel-nav a:hover {
+                    border-left: 3px solid #f39800;
+                    color: #f39800;
+                }
+
+                .page .right .panel-nav a.active {
+                    background-color: #f39800;
+                    border-left: 3px solid #f39800;
+                    -webkit-border-top-right-radius: 25px;
+                    border-top-right-radius: 25px;
+                    -webkit-border-bottom-right-radius: 25px;
+                    border-bottom-right-radius: 25px;
+                    color: #fff;
+                }
+
+                    .page .right .panel-nav a.active:hover {
+                        font-weight: bold;
+                    }
+
+
+        .page .right .expert-list-title, .page .right .lab-list-title {
+            font-size: 16px;
+            line-height: 30px;
+            font-weight: bold;
+            position: relative;
+            padding: 10px 0;
+            border-top: 1px solid #a1a1a1;
+        }
+        .page .right .moreLink {
+            font-size: 12px;
+            color:#666;
+            position:absolute;
+            top:6px;
+            right:10px;
+        }
+            .page .right .moreLink:hover {
+                color: #f39800;
+            }
+        .page .right .expert-list {
+            margin-bottom: 20px;
+        }
+            .page .right .expert-list .item {
+                min-width: 75px;
+                width:28%;
+                line-height: 30px;
+                text-align: center;
+                display: inline-block;
+                padding-left: 5px;
+                padding-right: 5px;
+                font-size: 13px;
+                border: 1px solid #ddd;
+                -webkit-border-radius: 15px;
+                border-radius: 15px;
+                margin-right: 10px;
+                margin-bottom: 10px;
+                color: #666;
+            }
+
+            .page .right .lab-list {
+                margin-bottom: 20px;
+            }
+                .page .right .lab-list .item {
+                    border-bottom: 1px solid #cccccc;
+                    display: flex;
+                    -webkit-box-align: center;
+                    -webkit-align-items: center;
+                    -moz-box-align: center;
+                    -ms-flex-align: center;
+                    align-items: center;
+                    margin-bottom: 10px;
+                    padding:0px 0px 15px 0px;
+                }
+                .page .right .item:hover{ color:#f39800; }
+                .page .right .expert-list .item:hover{ color:#fff;background-color:#f39800; }
+                    .page .right .lab-list .item:last-child {
+                        border-bottom:0px;
+                    }
+                .page .right .lab-list .item .img {
+                    width:30%;
+                    padding:3px;
+                }
+                    .page .right .lab-list .item .img img {
+                        width:100%!important;
+                        height:auto!important;
+                    }
+                    .page .right .lab-list .item .text {
+                        width: 70%;
+                        padding: 3px;
+                    }
+                        .page .right .lab-list .item .text {
+                        }
+
+@media screen and (max-width:767px) {
+    .page  {
+        padding:0px 0;
+    }
+        .page .main {
+            border-right: 0px;
+        }
+    .page .right {
+        margin-top:20px;
+        border-top: 1px solid #e5e5e5;
+        border-right: 0px;
+    }
+}
+
+.page .right .SFPanel {
+    padding-bottom:20px;
+}
+
+    .page .right .SFPanel a.ad {
+    }
+    .page .right .SFPanel a.ad:hover {
+    }
+
+    .page .right .SFPanel img {
+        width:100%;
+        height:auto;
+    }
+
+.page .right .related-panel {
+    padding-top: 13px;
+    padding-bottom: 13px;
+    border-top: 1px solid #a1a1a1;
+    position: relative;
+}
+
+    .page .right .related-panel .title-bar {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-pack: space-between;
+        -webkit-justify-content: space-between;
+        -moz-box-pack: space-between;
+        -ms-flex-pack: space-between;
+        justify-content: space-between;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -moz-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        padding-top: 9px;
+        padding-bottom: 9px;
+    }
+        .page .right .related-panel .title-bar .title {
+        }
+            .page .right .related-panel .title-bar .title h3 {
+                font-size: 16px;
+                display: inline-block;
+                line-height: 30px;
+                font-weight: bold;
+            }
+
+        .page .right .related-panel .title-bar a.more {
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .page .right .related-panel .title-bar a.more:hover {
+            color:#f39800;
+        }
+
+    .page .right .related-panel .content {
+    }
+        .page .right .related-panel .content .item {
+            /*
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            -webkit-box-pack: space-between;
+            -webkit-justify-content: space-between;
+            -moz-box-pack: space-between;
+            -ms-flex-pack: space-between;
+            justify-content: space-between;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -moz-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            */
+            padding-top: 8px;
+            padding-bottom:8px;
+            margin-bottom: 8px;
+            overflow: hidden;
+            border-bottom: 1px dashed #ccc;
+            display:block;
+        }
+    .page .right .related-panel.none-item-bottom-line .content .item {
+        border-bottom-width:0px;
+    }
+            .page .right .related-panel .content .item:last-child {
+                border-bottom-width: 0px;
+            }
+            .page .right .related-panel .content .item img {
+            }
+            .page .right .related-panel .content .item .text {
+                display: block;
+                position: relative;
+                padding-left: 15px;
+                color: #666;
+                /*overflow: hidden;
+                -o-text-overflow: ellipsis;
+                text-overflow: ellipsis;
+                white-space: nowrap;*/
+                line-height:26px;
+                font-size:13px;
+            }
+                .page .right .related-panel .content .item .text:hover {
+                    color:#f39800;
+                }
+                .page .right .related-panel .content .item .text:before {
+                position: absolute;
+                content: "";
+                width: 5px;
+                height: 5px;
+                background-color: #999999;
+                -webkit-border-radius: 50%;
+                border-radius: 50%;
+                left: 0;
+                top: 11px;
+            }
+            .page .right .related-panel .content .item .text .text1 {
+                color:#666;
+                font-size:12px;
+            }
+                .page .right .related-panel .content .item .text .text2 {
+                   
+
+                }
+                .page .right .related-panel .content .item .text .text2:hover {
+                    color: #f39800;
+                }
+                .page .right .related-panel .content .item .link {
+                }
+                .page .right .related-panel .content .item .link:hover {
+                }
+                .page .right .related-panel .content .item .link img {
+                    width:100%;
+                    height:auto;
+                }
+    /* ------------------------------------------------------------- */
+    /* ------------------------- 专题动态 ------------------------- */
+    /* ------------------------------------------------------------- */
+    .page .right .related-panel.columnsDynamicPanel .content .item .text {
+        padding-left: 10px;
+        color: #111;
+        line-height: 20px;
+    }
+
+        .page .right .related-panel.columnsDynamicPanel .content .item .text:before {
+            position: absolute;
+            content: "";
+            width: 5px;
+            height: 5px;
+            background-color: #fff;
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+            left: 0;
+            top: 11px;
+        }
+
+        .page .right .related-panel.columnsDynamicPanel .content .item .text a {
+            font-size: 13px;
+        }
+
+            .page .right .related-panel.columnsDynamicPanel .content .item .text a:hover {
+                color: #0094ff;
+            }
+
+.columnsDynamicPanel .introduct {
+    font-size: 12px;
+    color: #ccc;
+    padding: 0px;
+}
+
+.columnsDynamicPanel .item img {
+    padding: 0.25rem;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+}
